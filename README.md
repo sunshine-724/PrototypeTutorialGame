@@ -1,0 +1,2 @@
+# PrototypeTutorialGame
+Unity初心者講座用プロジェクトリポジトリです

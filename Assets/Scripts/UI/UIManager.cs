@@ -10,4 +10,9 @@ public class UIManager : MonoBehaviour
     {
         text.text = "Playerは" + damage + "ダメージを受けた!";
     }
+
+    public void hideUIText()
+    {
+        text.text = "";
+    }
 }

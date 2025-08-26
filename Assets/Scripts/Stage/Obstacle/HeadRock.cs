@@ -70,7 +70,7 @@ public class HeadRock : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            other.GetComponent<Player>().TakeDamage(1);
+            StartCoroutine(other.GetComponent<Player>().TakeDamage(1));
         }
         else if (other.CompareTag("Ground"))
         {
@@ -83,6 +83,6 @@ public class HeadRock : MonoBehaviour
     {
         currentState = newState;
         stateTimer = 0f; // 状態開始時にタイマーリセット
-        Debug.Log("State changed to: " + currentState);
+        // Debug.Log("State changed to: " + currentState);
     }
 }

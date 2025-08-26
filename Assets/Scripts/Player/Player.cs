@@ -1,3 +1,6 @@
+using System;
+using System.Collections;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Player : MonoBehaviour
@@ -9,16 +12,21 @@ public class Player : MonoBehaviour
     [Range(0, 10)]
     [SerializeField] float jumpForce = 6.0f;
 
+    [SerializeField] float timeDamageEffect = 1.0f;
+    [SerializeField] float damageEffectCycle = 0.1f;
+
 
     // Components
     [SerializeField] Transform tr;
     [SerializeField] Rigidbody2D rb;
+    [SerializeField] SpriteRenderer spriteRenderer;
     [SerializeField] private Animator anim;
 
     [SerializeField] UIManager uIManager;
 
     // Internal Parameter
     private Vector2 scaleThisObject;
+    private bool isInvincible = false;
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -70,9 +78,45 @@ public class Player : MonoBehaviour
         }
     }
 
-    public void TakeDamage(float damage)
+    public IEnumerator TakeDamage(float damage)
     {
         Debug.Log("Player took " + damage + " damage!");
+        if (isInvincible)
+        {
+            yield break;
+        }
+        isInvincible = true;
         uIManager.displayTakeDamage(damage);
+
+        StartCoroutine(TakeDamageEffect());
+        yield return new WaitForSeconds(timeDamageEffect);
+        StopCoroutine(TakeDamageEffect());
+
+        uIManager.hideUIText();
+        isInvincible = false;
+    }
+
+    private IEnumerator TakeDamageEffect()
+    {
+        float _time = 0.0f;
+        bool isClear = false;
+
+        while (_time <= timeDamageEffect)
+        {
+            yield return new WaitForSeconds(damageEffectCycle);
+            // Debug.Log("isClear:" + isClear);
+            _time += damageEffectCycle;
+            if (isClear)
+            {
+                spriteRenderer.color = new Color(1f, 1f, 1f, 0f);
+            }
+            else
+            {
+                spriteRenderer.color = new Color(1f, 1f, 1f, 1f);
+            }
+
+            isClear = !isClear;
+        }
+        spriteRenderer.color = new Color(1f, 1f, 1f, 1f);
     }
 }

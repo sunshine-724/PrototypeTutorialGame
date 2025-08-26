@@ -169,8 +169,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 4
   jumpForce: 6
+  timeDamageEffect: 1
+  damageEffectCycle: 0.1
   tr: {fileID: 2794016715551656443}
   rb: {fileID: 2955883065778620726}
+  spriteRenderer: {fileID: 4987526233730087504}
   anim: {fileID: 8182341961024547682}
   uIManager: {fileID: 0}
 --- !u!95 &8182341961024547682

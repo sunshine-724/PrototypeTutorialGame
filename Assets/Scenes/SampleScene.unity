@@ -1134,7 +1134,7 @@ Transform:
   m_GameObject: {fileID: 909881795}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6.0853467, y: -1.7531734, z: -1.3514509}
+  m_LocalPosition: {x: -6.0853467, y: -1.7531734, z: 1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1873,7 +1873,7 @@ Transform:
   m_GameObject: {fileID: 1437809726}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.11, y: -2, z: 0}
+  m_LocalPosition: {x: -5.11, y: -2, z: 1}
   m_LocalScale: {x: 6, y: 6, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2396,6 +2396,11 @@ LineRenderer:
 --- !u!4 &1678654139 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2794016715551656443, guid: 58702a4ed0a7a4ed38ffe1cb3f5e1605, type: 3}
+  m_PrefabInstance: {fileID: 1126879574793883016}
+  m_PrefabAsset: {fileID: 0}
+--- !u!212 &1678654144 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 4987526233730087504, guid: 58702a4ed0a7a4ed38ffe1cb3f5e1605, type: 3}
   m_PrefabInstance: {fileID: 1126879574793883016}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1698523965
@@ -2938,6 +2943,10 @@ PrefabInstance:
       propertyPath: uIManager
       value: 
       objectReference: {fileID: 813823077}
+    - target: {fileID: 7369622947008824961, guid: 58702a4ed0a7a4ed38ffe1cb3f5e1605, type: 3}
+      propertyPath: spriteRenderer
+      value: 
+      objectReference: {fileID: 1678654144}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

@@ -7,7 +7,7 @@ public class DetectPlayer : MonoBehaviour {
         // Debug.Log("triggerEnter: " + other.tag);
         if (other.CompareTag("Player"))
         {
-            other.GetComponent<Player>().TakeDamage(damageValue);
+            StartCoroutine(other.GetComponent<Player>().TakeDamage(damageValue));
         }
     }
 }
